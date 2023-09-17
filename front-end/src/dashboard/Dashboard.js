@@ -64,6 +64,7 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
     <main className="dashboard container">
       
       <section className="reservations-section">
+      <div className="dashboard-header">
       <h1>Dashboard</h1>
       <div className="d-md-flex mb-3">
         <h4 className="mb-0">Reservations for {date}</h4>
@@ -88,6 +89,7 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
           name="tomorrow"
           onClick={handleClick}
         >Next</button>
+      </div>
       </div>
       <div className="reservationTable">
       <table className="reservations table">

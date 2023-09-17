@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { createReservation, editReservation, listReservations } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
+import "./ReservationForm.css"
 
 function ReservationForm({ loadDashboard, edit }) {
     const history = useHistory();
@@ -151,7 +152,8 @@ function ReservationForm({ loadDashboard, edit }) {
     return (
         <div>
             <h2>Create Reservation</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} >
+                <div className="reservation-form">
                 <label id="first_name">First Name:</label>
                 <input
                     id="first_name"
@@ -206,9 +208,10 @@ function ReservationForm({ loadDashboard, edit }) {
                     value={formData.people}
                     required
                 />
-            <button type="submit">Submit</button>
+                </div>
+            <button type="submit" className="btn btn-primary">Submit</button>
             
-            <button type="button" onClick={history.goBack}>Cancel</button>
+            <button type="button" className="btn btn-danger" onClick={history.goBack}>Cancel</button>
             </form>
             <ErrorAlert error={error} />
             <ErrorAlert error={reservationsError} />

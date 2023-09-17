@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { createTable } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
+import "./TableForm.css"
 
 function TableForm({loadDashboard}) {
     const history = useHistory();
@@ -65,7 +66,8 @@ function TableForm({loadDashboard}) {
     return (
         <div>
             <h2>Create New Table</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} >
+                <div className="table-form">
                 <label>Table Name:</label>
                 <input 
                 id="table_name"
@@ -85,6 +87,7 @@ function TableForm({loadDashboard}) {
                 value={formData.capacity}
                 required
                 />
+                </div>
                 <button 
                 type="submit"
                 className="btn btn-primary">Submit</button>

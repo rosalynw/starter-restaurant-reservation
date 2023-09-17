@@ -71,7 +71,7 @@ export default function SearchReservation() {
 
     return (
         <div>
-            <h2>Find Your Reservation</h2>
+            <h2>Search Reservations</h2>
             <form onSubmit={handleFind}>
                 <label>Mobile Number:</label>
                 <input

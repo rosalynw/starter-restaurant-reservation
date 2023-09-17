@@ -8,9 +8,10 @@
 } */
 
 .app {
+
       /* Additional styles for your app container, if needed */
   width: 100%;
    /* Set the container to full viewport height */
    height: 100vh;
-  /* background-color: #fbd204; */
+  background-color: #fbd204;
 }

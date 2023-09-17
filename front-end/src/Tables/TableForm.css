@@ -1,0 +1,11 @@
+.table-form {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+}
+
+h2, label {
+  color: #ffffff;
+  padding: 5px;
+  font-weight: 500;
+}
