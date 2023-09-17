@@ -150,6 +150,7 @@ function ReservationForm({ loadDashboard, edit }) {
 
     return (
         <div>
+            <h2>Create Reservation</h2>
             <form onSubmit={handleSubmit}>
                 <label id="first_name">First Name:</label>
                 <input

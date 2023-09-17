@@ -64,6 +64,7 @@ function TableForm({loadDashboard}) {
 
     return (
         <div>
+            <h2>Create New Table</h2>
             <form onSubmit={handleSubmit}>
                 <label>Table Name:</label>
                 <input 
@@ -84,9 +85,12 @@ function TableForm({loadDashboard}) {
                 value={formData.capacity}
                 required
                 />
-                <button type="submit">Submit</button>
+                <button 
+                type="submit"
+                className="btn btn-primary">Submit</button>
                 <button
                 type="button"
+                className="btn btn-danger"
                 onClick={history.goBack}>Cancel</button>
             </form>
             <ErrorAlert error={error} />
