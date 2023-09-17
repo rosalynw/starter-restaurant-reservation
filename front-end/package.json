@@ -10,7 +10,8 @@
   },
   "private": true,
   "engines": {
-    "node": "16"
+    "node": "16",
+    "npm": "7"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -21,7 +22,6 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
-    "starter-restaurant-reservation": "file:..",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
