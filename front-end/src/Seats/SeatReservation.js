@@ -8,13 +8,11 @@ import { listReservations, seatTable, updateReservation } from "../utils/api";
  */
 export default function SeatReservation({ tables, loadDashboard }) {
   const history = useHistory();
-
   const [table_id, setTableId] = useState(0);
   const [reservations, setReservations] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
   const [errors, setErrors] = useState([]);
   const [apiError, setApiError] = useState(null);
-
   const { reservation_id } = useParams();
 
   /**
