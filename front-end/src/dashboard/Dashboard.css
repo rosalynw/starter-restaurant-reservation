@@ -4,7 +4,9 @@
     flex-wrap: wrap;
 }
 
-
+.dashboard-header {
+    padding: 15px;
+}
 
 .reservations, .tablesTable {
     background-color: #f1f0ef;
@@ -13,8 +15,7 @@
 }
 
 .reservationTable {
-   padding: 10px;
-    width: fit-content;
+   padding-bottom: 10px;
 }
 
 .tablesTable {
@@ -34,7 +35,12 @@ h1 {
     margin: 5px;
 }
 
-
+section {
+    width: 100%;
+}
+.reservations td, .reservations th {
+    padding: 5px;
+}
 .tablesTable {
     width: fit-content;
     height: fit-content;
@@ -71,6 +77,11 @@ h1 {
         padding: 5px;
         border-radius: 5%;
     }
+
+    .reservations td, .reservations th {
+        padding: 1px
+    }
+
 
     .tablesTable td, .tablesTable th {
         padding: .5px;

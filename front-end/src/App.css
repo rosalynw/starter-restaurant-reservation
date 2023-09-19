@@ -10,7 +10,8 @@
 .app {
       /* Additional styles for your app container, if needed */
    /* Set the container to full viewport height */
-  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
   background-color: #094275;
   background-image: url('./images/chairs.png');
   background-size: 90%;

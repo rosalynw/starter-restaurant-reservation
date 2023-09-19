@@ -78,7 +78,7 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
   return (
     <main className="dashboard container">
       
-      <section className="reservations-section">
+      <section className="reservations-section ">
       <div className="dashboard-header">
       <h1>Dashboard</h1>
       <div className="d-md-flex mb-3">
@@ -115,8 +115,8 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
     ))}
       </div>
       ) : (
-        <div className="reservationTable">
-      <table className="reservations table ">
+    <div className="reservationTable table table-responsive">
+      <table className="reservations ">
         <thead>
           <tr>
             <th scope="col">Reservation ID</th>
