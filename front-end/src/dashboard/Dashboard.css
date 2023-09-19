@@ -70,6 +70,16 @@ section {
         font-size: 40px;
     }
 
+    .reservationTable-small {
+        display: grid;
+        justify-content: center;
+        background-color: #f1f0ef;
+        border-radius: 15px;
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
     .reservations-small {
         background-color: #f1f0ef;
         display: flex;
@@ -78,10 +88,13 @@ section {
         border-radius: 5%;
     }
 
+    .reservationTable-small th, .reservationTable-small td {
+        padding-right: 5px;
+    }
+
     .reservations td, .reservations th {
         padding: 1px
     }
-
 
     .tablesTable td, .tablesTable th {
         padding: .5px;

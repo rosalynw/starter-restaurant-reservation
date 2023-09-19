@@ -83,28 +83,25 @@ export default function ReservationTable({ reservation, loadDashboard }) {
               Cancel
             </button>
         
-            <a href={`/reservations/${reservation.reservation_id}/seat`}>
+            <Link to={`/reservations/${reservation.reservation_id}/seat`}>
               <button 
               type="button"
               className="btn btn-primary"
               >Seat</button>
-            </a>
+            </Link>
         </>
       ) : (
         <>
-         
             <button 
             type="button" 
             className="btn btn-warning"
             disabled>Edit</button>
          
-          
             <button 
             type="button"
             className="btn btn-danger"
             disabled>Cancel</button>
         
-          
             <button 
               type="button"
               className="btn btn-primary"

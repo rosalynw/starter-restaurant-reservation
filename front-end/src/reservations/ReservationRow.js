@@ -58,7 +58,7 @@ export default function ReservationRow({ reservation, loadDashboard }) {
           </td>
 
           <td>
-            <Link href={`/reservations/${reservation.reservation_id}/seat`}>
+            <Link to={`/reservations/${reservation.reservation_id}/seat`}>
               <button 
               type="button"
               className="btn btn-primary"

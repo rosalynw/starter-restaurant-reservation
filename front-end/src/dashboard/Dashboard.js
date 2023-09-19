@@ -109,11 +109,42 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
 
       {isSmallScreen ? (
         //Render 2 column grid
-        <div className="reservationTable">
-        {reservations.map((reservation) => (
-      <ReservationTable key={reservation.reservation_id} reservation={reservation} loadDashboard={loadDashboard}/>
-    ))}
-      </div>
+         <div className="reservationTable">
+            {reservations.length ? ( // Conditionally render ReservationTable
+              reservations.map((reservation) => (
+                <ReservationTable key={reservation.reservation_id} reservation={reservation} loadDashboard={loadDashboard}/>
+              ))
+            ) : (
+              <table className="reservationTable-small">
+                <tbody>
+                  <tr>
+                    <th>Reservation ID:</th>
+                    <td>--</td>
+                  </tr>
+                  <tr>
+                    <th>First Name:</th>
+                    <td>--</td>
+                  </tr>
+                  <tr>
+                    <th>Last Name:</th>
+                    <td>--</td>
+                  </tr>
+                  <tr>
+                    <th>Date</th>
+                    <td>--</td>
+                  </tr>
+                  <tr>
+                    <th>Time:</th>
+                    <td>--</td>
+                  </tr>
+                  <tr>
+                    <th>People:</th>
+                    <td>--</td>
+                  </tr>
+                </tbody>
+              </table>
+            )}
+          </div>
       ) : (
     <div className="reservationTable table table-responsive">
       <table className="reservations ">
