@@ -64,6 +64,7 @@ export default function ReservationTable({ reservation, loadDashboard }) {
             </td>
           </tr>
           <tr>
+            <td colSpan={2}>
           {reservation.status === "booked" ? (
         <>
             <Link to={`/reservations/${reservation.reservation_id}/edit`}>
@@ -111,6 +112,7 @@ export default function ReservationTable({ reservation, loadDashboard }) {
          
         </>
       )}
+      </td>
         </tr>
         </tbody>
       </table>
