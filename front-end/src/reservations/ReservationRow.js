@@ -58,12 +58,12 @@ export default function ReservationRow({ reservation, loadDashboard }) {
           </td>
 
           <td>
-            <a href={`/reservations/${reservation.reservation_id}/seat`}>
+            <Link href={`/reservations/${reservation.reservation_id}/seat`}>
               <button 
               type="button"
               className="btn btn-primary"
               >Seat</button>
-            </a>
+            </Link>
           </td>
         </>
       ) : (

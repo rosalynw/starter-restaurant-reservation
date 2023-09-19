@@ -16,8 +16,14 @@ export default function SearchReservation() {
     const handleFind = async (event) => {
         event.preventDefault();
 
+        //if empty
         if (!mobileNumber) {
             setError("Please enter a mobile number.");
+            return;
+        }
+
+        if (!/^\d+$/.test(mobileNumber)) {
+            setError("Mobile number must only contain numbers");
             return;
         }
         const abortController = new AbortController();
