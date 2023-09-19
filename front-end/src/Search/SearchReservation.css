@@ -1,3 +1,27 @@
 .btn {
   margin: 5px;
 }
+
+h4 {
+  color: white;
+}
+
+.found-reservations-table {
+  background-color: #f1f0ef;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.mobile-search {
+  padding-bottom: 15px;
+}
+
+button {
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .found-reservations td, .found-reservations th {
+    padding: 1px
+}
+}

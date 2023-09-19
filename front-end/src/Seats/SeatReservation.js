@@ -110,6 +110,7 @@ export default function SeatReservation({ tables, loadDashboard }) {
 
   return (
     <main className="main">
+      <h2>Seat Reservation</h2>
       <form className="seatForm">
         {errorsJSX()}
         <ErrorAlert error={apiError} />
@@ -127,10 +128,10 @@ export default function SeatReservation({ tables, loadDashboard }) {
         </select>
         <div className="buttons">
           {" "}
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
             Submit
           </button>
-          <button type="button" onClick={history.goBack}>
+          <button type="button" className="btn btn-danger" onClick={history.goBack}>
             Cancel
           </button>
         </div>

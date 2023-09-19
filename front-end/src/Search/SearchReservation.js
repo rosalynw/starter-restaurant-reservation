@@ -46,8 +46,10 @@ export default function SearchReservation() {
             if (reservations.length === 0) {
                 return <h4>No reservations found</h4>
             } else {
-                return (
-                  <table>
+            return (
+            <section>
+                <div className="found-reservations-table table-responsive">
+                  <table className="found-reservations">
                     <thead>
                       <tr>
                         <th>Reservation ID</th>
@@ -58,6 +60,9 @@ export default function SearchReservation() {
                         <th>Reservation Time</th>
                         <th>People</th>
                         <th>Status</th>
+                        <th>Edit</th>
+                        <th>Cancel</th>
+                        <th>Seat</th>
                       </tr>
                     </thead>
                   <tbody>
@@ -69,6 +74,8 @@ export default function SearchReservation() {
                 ))}
                 </tbody>
                 </table>
+                </div>
+                </section>
                 )
             }
         }
@@ -76,9 +83,9 @@ export default function SearchReservation() {
     }
 
     return (
-        <div>
+        <div className="search-reservations">
             <h2>Search Reservations</h2>
-            <form onSubmit={handleFind}>
+            <form className="mobile-search" onSubmit={handleFind}>
                 <label>Mobile Number:</label>
                 <input
                     name="mobile_number"
