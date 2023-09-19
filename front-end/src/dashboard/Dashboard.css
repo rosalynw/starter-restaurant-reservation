@@ -1,8 +1,10 @@
 .dashboard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
+
+
 
 .reservations, .tablesTable {
     background-color: #f1f0ef;
@@ -10,9 +12,13 @@
     text-align: center;
 }
 
-.reservationsTable {
+.reservationTable {
+   padding: 10px;
     width: fit-content;
-    justify-content: center;
+}
+
+.tablesTable {
+    flex-grow: 2;
 }
 h1, .mb-0 {
     color: #f1f0ef;
@@ -36,10 +42,6 @@ h1 {
 
 /* Add media query for tablets and smaller screens */
 @media screen and (max-width: 768px) {
-    .dashboard {
-        display: grid; /* Change back to block display for responsiveness */
-        grid-template-columns: 1fr;
-    }
 
     .dashboard-header {
         display: flex;
@@ -53,10 +55,10 @@ h1 {
         align-items: center;
         justify-content: center;
     }
+    
     h1 {
         font-size: 40px;
     }
-
 
     .reservations-small {
         background-color: #f1f0ef;
@@ -66,10 +68,6 @@ h1 {
         border-radius: 5%;
     }
 
-    .tables {
-        display: flex;
-        flex-direction: column;
-        padding: 5px
-    }
-    
+
+
 }

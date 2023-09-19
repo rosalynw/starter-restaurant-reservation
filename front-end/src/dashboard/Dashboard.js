@@ -109,9 +109,9 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
 
       {isSmallScreen ? (
         //Render 2 column grid
-        <div className="reservationTable-small">
+        <div className="reservationTable">
         {reservations.map((reservation) => (
-      <ReservationTable key={reservation.reservation_id} reservation={reservation} />
+      <ReservationTable key={reservation.reservation_id} reservation={reservation} loadDashboard={loadDashboard}/>
     ))}
       </div>
       ) : (
@@ -138,14 +138,14 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
             reservationsRow()
           ) : (
             <tr>
-              <td colSpan={3}>--</td>
-              <td colSpan={6}>--</td>
-              <td colSpan={6}>--</td>
-              <td colSpan={6}>--</td>
-              <td colSpan={6}>--</td>
-              <td colSpan={6}>--</td>
-              <td colSpan={6}>--</td>
-              <td colSpan={6}>--</td>
+              <td >--</td>
+              <td >--</td>
+              <td >--</td>
+              <td >--</td>
+              <td >--</td>
+              <td >--</td>
+              <td >--</td>
+              <td >--</td>
             </tr>
           )}
         </tbody>
@@ -154,7 +154,7 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
       )}
       
       </section>
-      <section className="tablesTable">
+      <section className="tablesTable table table-responsive-sm">
       <div>
       <h4>Tables</h4>
       </div>
@@ -175,9 +175,9 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
               tablesRow()
               ) : (
                 <tr>
-                  <td colSpan="6">-</td>
-                  <td colSpan="6">-</td>
-                  <td colSpan="6">-</td>
+                  <td >-</td>
+                  <td >-</td>
+                  <td >-</td>
                 </tr>
             )}
           </tbody>

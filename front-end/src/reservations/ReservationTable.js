@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { updateReservation } from "../utils/api";
 
+
 export default function ReservationTable({ reservation, loadDashboard }) {
   if (!reservation || reservation.status === "finished") return null;
 
@@ -21,7 +22,10 @@ export default function ReservationTable({ reservation, loadDashboard }) {
    }
  }
 
+ 
+
   return (
+    
     <div>
       <table className="reservations-small table">
         <tbody>
@@ -62,16 +66,13 @@ export default function ReservationTable({ reservation, loadDashboard }) {
           <tr>
           {reservation.status === "booked" ? (
         <>
-          <td>
             <Link to={`/reservations/${reservation.reservation_id}/edit`}>
               <button 
               type="button"
               className="btn btn-warning"
               >Edit</button>
             </Link>
-          </td>
 
-          <td>
             <button
               type="button"
               className="btn btn-danger"
@@ -80,40 +81,37 @@ export default function ReservationTable({ reservation, loadDashboard }) {
             >
               Cancel
             </button>
-          </td>
-
-          <td>
+        
             <a href={`/reservations/${reservation.reservation_id}/seat`}>
               <button 
               type="button"
               className="btn btn-primary"
               >Seat</button>
             </a>
-          </td>
         </>
       ) : (
         <>
-          <td>
+         
             <button 
             type="button" 
             className="btn btn-warning"
             disabled>Edit</button>
-          </td>
-          <td>
+         
+          
             <button 
             type="button"
             className="btn btn-danger"
             disabled>Cancel</button>
-          </td>
-          <td>
+        
+          
             <button 
               type="button"
               className="btn btn-primary"
               disabled>Seat</button>
-          </td>
+         
         </>
       )}
-          </tr>
+        </tr>
         </tbody>
       </table>
     </div>
