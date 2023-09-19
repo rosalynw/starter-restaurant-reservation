@@ -8,10 +8,25 @@
 } */
 
 .app {
-
       /* Additional styles for your app container, if needed */
-  width: 100%;
    /* Set the container to full viewport height */
-   height: 100vh;
-  background-color: #fbd204;
+  height: 100vh;
+  background-color: #094275;
+  background-image: url('./images/chairs.png');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Styles for screens up to 768 pixels wide (e.g., tablets) */
+@media screen and (max-width: 768px) {
+  /* Your CSS styles for smaller screens go here */
+  body {
+    font-size: 16px;
+  }
+  /* Add more styles as needed */
+  .app {
+    height: 100%;
+  }
+  
 }

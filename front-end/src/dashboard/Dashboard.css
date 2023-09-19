@@ -11,6 +11,7 @@
 }
 
 .reservationsTable {
+    width: fit-content;
     justify-content: center;
 }
 h1, .mb-0 {
@@ -31,6 +32,44 @@ h1 {
 .tablesTable {
     width: fit-content;
     height: fit-content;
-    margin: 15px;
-    padding: 5px;
+}
+
+/* Add media query for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+    .dashboard {
+        display: grid; /* Change back to block display for responsiveness */
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .dateButtons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 40px;
+    }
+
+
+    .reservations-small {
+        background-color: #f1f0ef;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 5%;
+    }
+
+    .tables {
+        display: flex;
+        flex-direction: column;
+        padding: 5px
+    }
+    
 }

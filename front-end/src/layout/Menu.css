@@ -2,7 +2,15 @@
     font-size: large;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+}
+
 .sidebar-brand-text {
     font-family: 'Limelight', cursive;
-    font-size: 25px
+    font-size: 25px;
+}
+
+@media screen and (max-width: 768px) {
+
 }

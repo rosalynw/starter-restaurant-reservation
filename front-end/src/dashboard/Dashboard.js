@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css"
 import { previous, next, today } from "../utils/date-time";
 import ErrorAlert from "../layout/ErrorAlert";
 import ReservationRow from "../reservations/ReservationRow";
 import { useHistory } from "react-router-dom";
 import TableRow from "../Tables/TableRow";
+import ReservationTable from "../reservations/ReservationTable";
 
 /**
  * Defines the dashboard page.
@@ -14,8 +15,22 @@ import TableRow from "../Tables/TableRow";
  */
 function Dashboard({ date, reservations, reservationsError, loadDashboard, tables, tablesError }) {
   const history = useHistory();
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-  
+  //handle resize
+  useEffect(() => {
+    function handleResize() {
+      setIsSmallScreen(window.innerWidth <= 768); //Adjust screen width
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const reservationsRow = () => {
     return reservations.map((reservation) => (
       <ReservationRow
@@ -91,8 +106,17 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
         >Next</button>
       </div>
       </div>
-      <div className="reservationTable">
-      <table className="reservations table">
+
+      {isSmallScreen ? (
+        //Render 2 column grid
+        <div className="reservationTable-small">
+        {reservations.map((reservation) => (
+      <ReservationTable key={reservation.reservation_id} reservation={reservation} />
+    ))}
+      </div>
+      ) : (
+        <div className="reservationTable">
+      <table className="reservations table ">
         <thead>
           <tr>
             <th scope="col">Reservation ID</th>
@@ -103,9 +127,9 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
             <th scope="col">Time</th>
             <th scope="col">People</th>
             <th scope="col"> Status</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Cancel</th>
-            <th scope="col">Seat</th>
+            <th scope="col" >Edit</th>
+            <th scope="col" >Cancel</th>
+            <th scope="col" >Seat</th>
           </tr>
         </thead>
 
@@ -114,19 +138,21 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
             reservationsRow()
           ) : (
             <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
+              <td colSpan={3}>--</td>
+              <td colSpan={6}>--</td>
+              <td colSpan={6}>--</td>
+              <td colSpan={6}>--</td>
+              <td colSpan={6}>--</td>
+              <td colSpan={6}>--</td>
+              <td colSpan={6}>--</td>
+              <td colSpan={6}>--</td>
             </tr>
           )}
         </tbody>
       </table>
       </div>
+      )}
+      
       </section>
       <section className="tablesTable">
       <div>
@@ -149,9 +175,9 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
               tablesRow()
               ) : (
                 <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td colSpan="6">-</td>
+                  <td colSpan="6">-</td>
+                  <td colSpan="6">-</td>
                 </tr>
             )}
           </tbody>
