@@ -44,7 +44,7 @@ export default function SearchReservation() {
     const searchResults = () => {
         if (searched) {
             if (reservations.length === 0) {
-                return <h4>No reservations found</h4>
+                return <h4 className="no-reservations">No reservations found</h4>
             } else {
             return (
             <section>

@@ -187,7 +187,7 @@ function Dashboard({ date, reservations, reservationsError, loadDashboard, table
       </section>
       <section className="tablesTable table table-responsive-sm">
       <div>
-      <h4>Tables</h4>
+      <h4 className="tables-header">Tables</h4>
       </div>
         <table className="tables table">
           <thead>

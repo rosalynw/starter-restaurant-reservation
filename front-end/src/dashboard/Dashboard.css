@@ -21,8 +21,13 @@
 .tablesTable {
     flex-grow: 2;
 }
+
 h1, .mb-0 {
     color: #f1f0ef;
+}
+
+.tables-header {
+    color: black;
 }
 
 h1 {

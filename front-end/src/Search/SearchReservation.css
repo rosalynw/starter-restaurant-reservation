@@ -2,11 +2,11 @@
   margin: 5px;
 }
 
-h4 {
+.no-reservations {
   color: white;
 }
 
-.found-reservations-table {
+.found-reservations {
   background-color: #f1f0ef;
   border-radius: 15px;
   text-align: center;
