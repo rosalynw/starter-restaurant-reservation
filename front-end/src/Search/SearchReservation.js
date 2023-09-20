@@ -24,10 +24,10 @@ export default function SearchReservation() {
             return;
         }
 
-        if (!/^[\d()-]+$/.test(formattedMobileNumber)) {
-            setError("Mobile number must only contain numbers, dashes, and parentheses.");
-            return;
-        }
+         if (!/^[\d()-]+$/.test(formattedMobileNumber)) {
+             setError("Mobile number must only contain numbers, dashes, and parentheses.");
+             return;
+         }
         const abortController = new AbortController();
 
         try {
@@ -92,7 +92,7 @@ export default function SearchReservation() {
                 <input
                     name="mobile_number"
                     id="mobile_number"
-                    type="number"
+                    type="tel"
                     placeholder="Enter a customer's phone number"
                     onChange={handleChange}
                     value={mobileNumber}

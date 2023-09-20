@@ -24,7 +24,7 @@ describe("US-07 - Search reservations - E2E", () => {
     page = await browser.newPage();
     page.on("console", onPageConsole);
     await page.setViewport({ width: 1920, height: 1080 });
-    await page.goto(`${baseURL}/search`, { waitUntil: "networkidle2" });
+    await page.goto(`${baseURL}/search`, { waitUntil: "networkidle0" });
   });
 
   afterEach(async () => {
@@ -33,6 +33,7 @@ describe("US-07 - Search reservations - E2E", () => {
 
   describe("/search page", () => {
     test("entering an existing mobile number and submitting displays the matched records", async () => {
+      jest.setTimeout(30000);
       await page.type("input[name=mobile_number]", "808-555-0140");
 
       await page.screenshot({

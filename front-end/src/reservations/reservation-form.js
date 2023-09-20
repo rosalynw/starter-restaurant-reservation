@@ -72,6 +72,14 @@ function ReservationForm({ loadDashboard, edit }) {
         })
     }
 
+    const handleMobileChange = ({ target }) => {
+        const sanitizedValue = target.value.replace(/[^0-9()-]/g, "");
+        setFormData({
+            ...formData,
+            [target.name]: sanitizedValue
+        })
+    }
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -177,7 +185,7 @@ function ReservationForm({ loadDashboard, edit }) {
                     id="mobile_number"
                     name="mobile_number"
                     type="tel"
-                    onChange={handleChange}
+                    onChange={handleMobileChange}
                     value={formData.mobile_number}
                     required
                 />
