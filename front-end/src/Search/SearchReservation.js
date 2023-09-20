@@ -15,21 +15,23 @@ export default function SearchReservation() {
     }
     const handleFind = async (event) => {
         event.preventDefault();
+        
+        const formattedMobileNumber = mobileNumber.replace(/[-()]/g, "");
 
         //if empty
-        if (!mobileNumber) {
+        if (!formattedMobileNumber) {
             setError("Please enter a mobile number.");
             return;
         }
 
-        if (!/^\d+$/.test(mobileNumber)) {
-            setError("Mobile number must only contain numbers");
+        if (!/^[\d()-]+$/.test(formattedMobileNumber)) {
+            setError("Mobile number must only contain numbers, dashes, and parentheses.");
             return;
         }
         const abortController = new AbortController();
 
         try {
-            const response = await listReservations({ mobile_number: mobileNumber}, abortController.signal);
+            const response = await listReservations({ mobile_number: formattedMobileNumber}, abortController.signal);
             setReservations(response);
             setError(null);
             setSearched(true);

@@ -24,7 +24,7 @@ describe("US-07 - Search reservations - E2E", () => {
     page = await browser.newPage();
     page.on("console", onPageConsole);
     await page.setViewport({ width: 1920, height: 1080 });
-    await page.goto(`${baseURL}/search`, { waitUntil: "networkidle0" });
+    await page.goto(`${baseURL}/search`, { waitUntil: "networkidle2" });
   });
 
   afterEach(async () => {
@@ -51,8 +51,9 @@ describe("US-07 - Search reservations - E2E", () => {
         path: ".screenshots/us-07-search-reservations-submit-valid-after.png",
         fullPage: true,
       });
-      const textOnPage = await page.evaluate(() => document.body.textContent);
-      expect(textOnPage).toContain("Tiger");
+       const textOnPage = await page.evaluate(() => document.body.textContent);
+       expect(textOnPage).toContain("Tiger");
+      
     });
 
     test("entering an non-existent phone number and submitting displays a No reservations found message", async () => {
